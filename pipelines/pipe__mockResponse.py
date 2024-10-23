@@ -1,4 +1,4 @@
-from typing import List, Union, Generator, Iterator
+from typing import List, Union, Generator, Iterator, Optional
 from pydantic import BaseModel
 import requests
 import os
@@ -32,22 +32,20 @@ class Pipeline:
 
         return """## Sources
 
-```citation
-[
-		{
-			"source": "source1",
-			"url": "www.google.com",
-			"url_type": "weblink",
-			"quotes": ["quote11", "quote12", "quote13"]
-		},
-		{
-			"source": "source2",
-			"url": "oliver/dummy/file.txt",
-			"url_type": "local_file",
-			"quotes": ["quote21", "quote22", "quote23"]
-		}
-]
-````
+```citations
+{"/Users/oliverkoehn/repos/private/chAIda/in/files/txt/attentionIsAllYouNeed.pdf": ["quote1", "quote2"], "/Users/oliverkoehn/repos/private/chAIda/in/files/txt/companyExpansionPolicy.txt": ["quote3", "quote4"]}
+```
+
+```citations
+{
+    "/Users/oliverkoehn/repos/private/chAIda/in/files/txt/aiRegAct.txt": [
+        "Most of the text addresses high-risk AI systems, which are regulated.",
+        "High risk AI systems are those: used as a safety component or a product covered by EU laws in Annex I AND required to undergo a third-party conformity assessment under those Annex I laws; OR those under Annex III use cases (below)",
+        "AI systems used in researching and interpreting facts and applying the law to concrete facts or used in alternative dispute resolution."
+    ]
+}
+```
+
 dummy
 123
 ```python
